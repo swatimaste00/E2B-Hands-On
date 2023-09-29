@@ -53,19 +53,19 @@ Build and deploy the application. Run the following commands:
 
     ![plot](./images/postdeploy.png)
 
-9. Verify SAP Event Mesh Subscription and Instance creation.
+9. Verify SAP Integration Suite, Advanced Event Mesh Subscription and Instance creation.
 
     - In SAP BTP Enterprise account, you should be able to see the below details in Subcriptions and Instances.
 
         ![plot](./images/eventmesh-enterprise.png)
 
-10. Open the SAP Event Mesh application.
+10. Open the SAP Integration Suite, Advanced Event Mesh application.
 
     - If you are using SAP BTP Enterprise account, go to the Subscriptions tab and choose Event Mesh to open the application.
 
-    - If you are using SAP BTP Trial account, go to Instances tab, select the instance for SAP Event Mesh and choose View Dashboard.
+    - If you are using SAP BTP Trial account, go to Instances tab, select the instance for SAP Integration Suite, Advanced Event Mesh and choose View Dashboard.
 
-11. Choose **Message Clients** and then choose **Queues**. You will see the below message client and queue created in your SAP Event Mesh service instance.
+11. Choose **Message Clients** and then choose **Queues**. You will see the below message client and queue created in your SAP Integration Suite, Advanced Event Mesh service instance.
 
     ![plot](./images/msgclient.png)
 
@@ -117,7 +117,7 @@ Build and deploy the application. Run the following commands:
 
     ![plot](./images/callback.png)
 
-4. Open the SAP Event Mesh application.
+4. Open the SAP Integration Suite, Advanced Event Mesh application.
 
     - If you are using SAP BTP Enterprise account, go to the Subscriptions tab and choose Event Mesh to open the application.
 
@@ -145,7 +145,7 @@ Note: For example, if the Subscribed Topic Name is "orgname/industry/event/raise
 
     ![plot](./images/create-destination.png)
 
-10. Enter **Send to SAP Event Mesh** as value for name of the destination.
+10. Enter **Send to SAP Integration Suite, Advanced Event Mesh** as value for name of the destination.
 
 11. In the **Destination Type** dropdown menu, select **Webhook**.
 

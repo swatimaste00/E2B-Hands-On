@@ -29,12 +29,12 @@ Service | Service Plan | Usage Scenario |
 [SAP HANA Cloud](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?tab=customerreference&region=all)  | hana | Application database for CAP Application
 [SAP HANA Schemas & HDI Containers](https://help.sap.com/docs/SAP_HANA_PLATFORM/3823b0f33420468ba5f1cf7f59bd6bd9/e28abca91a004683845805efc2bf967c.html?version=2.0.04&locale=en-US) | hd-shared | Application database for CAP Application
 
-**Note:** Service instances for SAP Event Mesh, Business Rules, SAP HANA Schemas & HDI Containers, Connectivity service, Destination service and SAP Authorization and Trust Management Service will be created programmatically during deployment. 
+**Note:** Service instances for SAP Integration Suite, Advanced Event Mesh, Business Rules, SAP HANA Schemas & HDI Containers, Connectivity service, Destination service and SAP Authorization and Trust Management Service will be created programmatically during deployment. 
 
 
-### 2. Set Up SAP Event Mesh
+### 2. Set Up SAP Integration Suite, Advanced Event Mesh
 
-To set up SAP Event Mesh for this scenario, follow these steps:
+To set up SAP Integration Suite, Advanced Event Mesh for this scenario, follow these steps:
 
 1. In the SAP BTP cockpit, navigate to your subaccount and choose **Services** > **Instances and Subscriptions** and then choose **Create**.
 
@@ -44,13 +44,13 @@ To set up SAP Event Mesh for this scenario, follow these steps:
 
     ![plot](./images/sub-eventmesh1.png)
 
-3. Open the SAP Event Mesh application:
+3. Open the SAP Integration Suite, Advanced Event Mesh application:
 
     - If you are using SAP BTP Enterprise account, go to the **Subscriptions** tab and choose **Event Mesh** to open the application.
 
         ![plot](./images/eventmesh-btp.png)
     
-    - If you are using SAP BTP Trial account, go to **Instances** tab, select the instance for SAP Event Mesh and choose **View Dashboard**.
+    - If you are using SAP BTP Trial account, go to **Instances** tab, select the instance for SAP Integration Suite, Advanced Event Mesh and choose **View Dashboard**.
 
         ![plot](./images/viewdashboard.png)
 

@@ -11,7 +11,7 @@ There are two scenarios described in this repository. In this tutorial, the even
 
 1. Inbound to SAP S/4HANA
 
-    In this scenario, Events from Azure IoT are sent to SAP Event Mesh. The Node.js extension application subscribes to SAP Integration Suite, Advanced Event Mesh queue and executes the action that is required to be taken based on the event details.  
+    In this scenario, Events from Azure IoT are sent to SAP Integration Suite, Advanced Event Mesh. The Node.js extension application subscribes to SAP Integration Suite, Advanced Event Mesh queue and executes the action that is required to be taken based on the event details.  
 
 2. Outbound from SAP S/4HANA
 
@@ -75,21 +75,21 @@ SAP Private Link service is used for connectivity between SAP BTP and SAP S/4HAN
 
 The following steps depicts the information flow across systems (in both the scenarios)
 
-(1) Event is triggered from Microsoft Azure and sent to SAP Event Mesh.
+(1) Event is triggered from Microsoft Azure and sent to SAP Integration Suite, Advanced Event Mesh.
 
-(2) Event-to-Business-Action framework(extension app) processor module's endpoint is subscribed to SAP Event Mesh, hence receives this event.
+(2) Event-to-Business-Action framework(extension app) processor module's endpoint is subscribed to SAP Integration Suite, Advanced Event Mesh, hence receives this event.
 
 (3) Event-to-Business-Action framework(extension app) processor module leverages the Business Rules capability of SAP Build Process Automation to derive business action (for example, Purchase Order Requisition creation in SAP S/4HANA system) based on certain characteristics of incoming event.
 
 (4), (5), (6) (7) and (8) Event-to-Business-Action framework (extension app) processor module triggers the defined action in the SAP S/4HANA system by using the SAP Destination Service and SAP Private Link Service.  
 
-For more information, see [Set Up Connectivity Between SAP BTP and SAP S/4HANA Using SAP Private Link Service](./Scenario1-Inbound-to-SAPS4HANA/Step4b-Setup-SAPPrivateLinkService/README.md) page.
+For more information, see [Set Up Connectivity Between SAP BTP and SAP S/4HANA Using SAP Private Link Service](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step4b-Setup-SAPPrivateLinkService/README.md) page.
 
 In case SAP S/4HANA is on-premise and private cloud (refer to Figure-2)– communication with SAP S/4 HANA integrates via SAP Connectivity Service and Cloud Connector.
 
 (9) and (10) SAP S/4HANA publishes event for Purchase Requisition creation is sent to Microsoft Azure Event Grid via SAP Event Mesh Connectivity Bridge for further processing by Microfost Azure applications.
 
-For outbound from SAP S/4HANA scenario using SAP Event Mesh Connectivity Plan(Beta), see [Integrate Events Between SAP and Microsoft using SAP Event Mesh - Connectivity Bridge Service](https://github.com/SAP-samples/btp-event-mesh-connectivity-bridge) page. You will find the detailed architecture and business scenario for SAP Event Mesh and Azure Event Grid direct connectivity.
+For outbound from SAP S/4HANA scenario using SAP Integration Suite, Advanced Event Mesh Connectivity Plan(Beta), see [Integrate Events Between SAP and Microsoft using SAP Event Mesh - Connectivity Bridge Service](https://github.com/SAP-samples/btp-event-mesh-connectivity-bridge) page. You will find the detailed architecture and business scenario for SAP Integration Suite, Advanced Event Mesh and Azure Event Grid direct connectivity.
 
 ## Requirements 
 
@@ -103,7 +103,7 @@ These are the technical prerequistics for an integration between Microsoft Azure
     > - Required for deploying and running the extension application in SAP BTP
 - Authorization & Trust Management Service
     > - Required for securing the extension application in SAP BTP
-- SAP Event Mesh 
+- SAP Integration Suite, Advanced Event Mesh 
     >- Required to receive events from Azure IoT Platform
 - SAP HANA Cloud 
     >- Required to store action configuration and logs for CAP application
@@ -124,7 +124,7 @@ These are the technical prerequistics for an integration between Microsoft Azure
     > - Required for configuring device template, event producer and event routing.
 
 - An Azure Storage Account
-    > - Required for storing the events received from Azure Event Grid in case of outbound from SAP S/4HANA scenario using SAP Event Mesh Connecivity service.
+    > - Required for storing the events received from Azure Event Grid in case of outbound from SAP S/4HANA scenario using SAP Integration Suite, Advanced Event Mesh Connecivity service.
 
 - An Azure Communication Service
     >- Required to send email notificiations and SMS to users.
@@ -151,7 +151,9 @@ Step 4: Connect SAP BTP and SAP S/4HANA
 
    - [(Option 2) Using SAP Private Link Service](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step4b-Setup-SAPPrivateLinkService/README.md)
 
-[Step 5: Build and Deploy the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5-Build-Deploy-ExtensionApplication/README.md)
+[Step 5a: Build and Deploy the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5a-Build-Deploy-ExtensionApplication/README.md)
+
+[Step 5b: SAP Integration Suite, Advanced Event Mesh Configuration](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5b-Advanced Event Mesh Configuration/README.md)
 
 [Step 6: Create SAP Business Rules Project](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step6-Configure-BusinessRules-Part1/README.md)
 
@@ -162,7 +164,7 @@ Step 4: Connect SAP BTP and SAP S/4HANA
 [Step 9: Test the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step9-Test-ExtensionApplication/README.md)
 
 For **Scenario 2 - Outbound from SAP S/4HANA to Azure Event Grid**, please refer to 
-[Receiving events from SAP S/4HANA in Microsoft Azure Event Grid using SAP Event Mesh](./Documentation/Scenario2-Outbound-from-SAPS4HANA/README.md) link.
+[Receiving events from SAP S/4HANA in Microsoft Azure Event Grid using SAP Integration Suite, Advanced Event Mesh](./Documentation/Scenario2-Outbound-from-SAPS4HANA/README.md) link.
 
 ## Additional Resources
 
