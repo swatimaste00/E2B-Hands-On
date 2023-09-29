@@ -68,10 +68,10 @@ The services used from SAP BTP are the Cloud Foundry Runtime, SAP Advanced Event
 
 SAP Private Link service is used for connectivity between SAP BTP and SAP S/4HANA when both the systems are running on Microsoft Azure Infrastructure. In this tutorial you will find implementation steps for SAP BTP Private Link service and Microsoft Azure Private Link service. Alternatively you can use SAP Connectivity service and Cloud Connector for integration of SAP BTP and SAP S/4HANA as well. 
 
-![plot](../../images/eventprocessingarch.png) **Figure-1: High-level architecture (with SAP S/4HANA on Azure)**
+![plot](./images/SolutionArchitecture.png) **Figure-1: High-level architecture (with SAP S/4HANA on Azure)**
 
     
-![plot](../../images/eventprocessingarch-onpremise.png) **Figure-2: High-level architecture with SAP S/4HANA on-premise and private cloud**
+![plot](./images/SolutionArcCloudConnector.png) **Figure-2: High-level architecture with SAP S/4HANA on-premise and private cloud**
 
 The following steps depicts the information flow across systems (in both the scenarios)
 
@@ -96,6 +96,7 @@ For outbound from SAP S/4HANA scenario using SAP Integration Suite, Advanced Eve
 These are the technical prerequistics for an integration between Microsoft Azure IoT Central, SAP BTP and SAP S/4HANA. 
 
 **Services in SAP BTP**
+
 - Cloud Foundry Runtime
     > - Foundation for running the CAP extension application for translating events to business actions.
     > - Required for the trust between Microsoft Azure Active Directory and SAP BTP
@@ -107,12 +108,13 @@ These are the technical prerequistics for an integration between Microsoft Azure
     >- Required to receive events from Azure IoT Platform
 - SAP HANA Cloud 
     >- Required to store action configuration and logs for CAP application
-- SAP Process Automation, Business Rules capability
-    >- Business Rules service to configure business decisions that needs to be taken based on the type of event received from Azure IoT Platform.
+- SAP Build Process Automation, Decisions capability
+    >- Decisions service to configure business decisions that needs to be taken based on the type of event received from Azure IoT Platform.
 - SAP Event Mesh Connectivity Plan(Beta)
     >- As of now, this service supports SAP Event Mesh to Azure Event Grid direct connectivity. This is available as Beta for Enterprise accounts only for now.
 
 **Microsoft Azure**
+
 - A valid Microsoft Azure subscription
 - A Microsoft Azure Active Directory
     > - Required for the trust between Microsoft Azure Active Directory and SAP BTP
@@ -153,7 +155,7 @@ Step 4: Connect SAP BTP and SAP S/4HANA
 
 [Step 5a: Build and Deploy the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5a-Build-Deploy-ExtensionApplication/README.md)
 
-[Step 5b: SAP Integration Suite, Advanced Event Mesh Configuration](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5b-Advanced Event Mesh Configuration/README.md)
+[Step 5b: SAP Integration Suite, Advanced Event Mesh Configuration](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5b-Advanced-Event Mesh-Configuration/README.md)
 
 [Step 6: Create SAP Business Rules Project](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step6-Configure-BusinessRules-Part1/README.md)
 
