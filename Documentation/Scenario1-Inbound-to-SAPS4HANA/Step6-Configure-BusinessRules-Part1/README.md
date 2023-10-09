@@ -16,3 +16,99 @@ In this section, you will configure SAP Business Rule project which will be used
     ![plot](./images/automatedprocess.png)
 
     ![plot](./images/process.png)
+
+4. Fill the project name as **Events-to-Business-Actions-Framework** and Choose **Create**
+
+    ![plot](./images/createproject.png)
+
+5. The Project is now created , click on **Cancel** for the **Create Process** pop-up , as we will be creating **DEcisions** and it's related **Data Types** in the following Steps.
+
+    ![plot](./images/ProjectCreated.png)
+
+6. Under the **Artifacts** Tab of your project, Click on **Create** and then choose **Decision** .
+
+    ![plot](./images/CreateDecision.png)
+
+    Fill in the Decision Name as **E2BDecision** and Click on **Create**.
+
+    ![plot](./images/DecisionName.png)
+
+    You will see the following screeen as the decision is created successfully.
+
+### 2. Configure SAP Build Process Automation Decisions
+
+1. The **Decision** configuration requires the **Input and Ouput parameters** as well as the business **Rule** that maps the incoming event to it's associated business action. To configure the Input/Output parameters we need to create the Custom Data Type with the fields that the incoming event payload contains.
+
+    Under the**Artifacts** Tab, Click on **Create** and choose **Data Types**.
+
+       ![plot](./images/CreateDataType.png)
+
+2. We will be creating two data types namely **eventInfo** and **actionInfo** which will have the structure of the incoming event payload and the action Id respectively. To create the datatypes follow the steps shown below:
+
+    **a.** Create Data Type called **eventInfo**
+
+       ![plot](./images/eventInfoDT.png)
+
+    **b.**  Click on **New Field** and Enter the following three field details and click on **Save**
+
+       ![plot](./images/eventDTFields.png)
+
+    **c.** Under the**Artifacts** Tab, Click on **Create** and choose **Data Types**.
+
+       ![plot](./images/actionInfoDT.png)
+
+    **d.** Create data type called **actionInfo** 
+
+       ![plot](./images/actionDTname.png)
+
+    **e.** Click on **New Field** and Enter the following three field details and click on **Save**
+
+       ![plot](./images/actionDTFields.png)
+
+3. As we have now created the required data types , let us go to the **E2BDecision** and configure the Input/Output parameters as shown below. Fill the Input Paramter Name as **EventInfo** and Choose the Type from the drop down as **eventInfo** created previously. Fill the Output Parameter Name as **ActionInfo** and choose the Type from the as **actionInfo**.
+
+    ![plot](./images/addIpOp.png)
+
+4. Next let us configure the **Rules**. 
+
+    **a.** Click on **Add Rule**
+
+       ![plot](./images/addRule.png)
+
+    **b.** Fill in the **Rule Name** as **DecideAction** and click on **Next Step**
+
+       ![plot](./images/CreateRule1.png)
+
+    **c.** To configure the **Conditions** follow the steps shown below. 
+
+       ![plot](./images/CreateRule2.png)
+
+    **d.** To configure the **Results** follow the steps shown below.
+
+       ![plot](./images/CreateRule3.png)
+
+    **e.** Verify the **Review** Tab 
+
+       ![plot](./images/CreateRule4.png)
+
+    **f.** An empty **Decision Table** will be created.
+
+       ![plot](./images/CreateRule5.png)
+
+    **g.** Fill the fields with following values:
+    ```
+        SourceSystem: ='Azure',
+        DeviceType: ='Silo',
+        DeviceLocation: ='Plant A'
+
+        ActionId to be filled later.
+    ```
+       ![plot](./images/RuleField.png)
+
+    
+
+ 
+
+
+
+
