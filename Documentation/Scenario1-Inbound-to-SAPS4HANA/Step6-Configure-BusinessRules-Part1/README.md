@@ -105,8 +105,40 @@ In this section, you will configure SAP Business Rule project which will be used
     ```
        ![plot](./images/RuleField.png)
 
-    
+5. To use the decision in our CAP extension application we need to deploy the Decision created. 
 
+    First click on **Release** to release the Decisions. 
+    
+    ![plot](./images/RuleCreated.png)
+
+    Click on **Release**
+
+    ![plot](./images/ProjectRelease.png)
+
+6. Now that the project is released, it is ready for deployment. Click on the **Deploy**
+
+    ![plot](./images/Deploy1.png)
+
+    Follow the steps shown in the following screenshots.
+
+    [plot](./images/Deploy2.png)
+
+    [plot](./images/Deploy3.png)
+
+    [plot](./images/Deploy4.png)
+
+7. The Project is successfully deployed ! 
+
+    [plot](./images/Deployed.png)
+
+
+8. Go to **E2BDecision** , Click on the three dots to **View Details** and Click on **View Details**
+
+    [plot](./images/ViewDetails.png)
+
+    Copy the **Id**
+
+    [plot](./images/ViewDetails2.png)
  
 
 
