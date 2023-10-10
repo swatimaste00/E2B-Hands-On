@@ -20,11 +20,11 @@ In this event-driven scenario, based on the real-time status of the IoT Devices 
 1. Data from IoT Devices are sent to Microsoft Azure IoT Central.   
    In this session, a waste container/silo is used which sends fill level information to IOT central.
 
-2. Rules in Microsoft Azure IoT triggers an call to SAP Integration Suite, Advanced Event Mesh in case of any actions which needs attention. This is defined in IoT Rules for devices.
+2. Rules in Microsoft Azure IoT triggers an call to SAP Integration Suite, Advanced Event Mesh in case of any events which needs attention. This is defined in IoT Rules for devices.
 
 3. SAP Integration Suite, Advanced Event Mesh receives the events.
 
-4. Extension application is configured with all necessary actions (For example, calling SAP Build Process Automation - Decisions capability API to read the decision tables to decide on action to be taken, configure the OData API call to be executed , service call back to the device) to be taken.
+4. Extension application of Event-To-Business=Actions framework is configured with all necessary actions (For example, calling SAP Build Process Automation - Decisions capability API to read the decision tables to decide on action to be taken, configure the OData API call to be executed , service call back to the device) to be taken.
 
 5. Extension application executes the business actions.
 
