@@ -6,23 +6,11 @@ This repository contains code samples and instructions for developing an extensi
 
 This framework can be used in combination with any hyperscalar/telco IoT.
 
-
-There are two scenarios described in this repository. In this tutorial, the events are received from Azure IoT Platform and the actions for these events are taken in SAP S/4HANA. You can use this application to further customize it for other systems as well.
-
-1. Inbound to SAP S/4HANA
-
-    In this scenario, Events from Azure IoT are sent to SAP Integration Suite, Advanced Event Mesh. The Node.js extension application subscribes to SAP Integration Suite, Advanced Event Mesh queue and executes the action that is required to be taken based on the event details.  
-
-2. Outbound from SAP S/4HANA
-
-    In this scenario, any event that is triggerred from SAP S/4HANA is sent to SAP Event Grid Connectivity Bridge. With the latest Beta release of SAP Event Mesh Connectivity Bridge plan, event is propogated to Azure Event Grid with direct connectivity. This service plan is currently available for only events from SAP S/4HANA to Azure Event Grid. In this scenario, the events from Azure Event Grid is consumed in Azure Function app to send outlook notification to the user. You can further enhance the scenario as per your requirement.
-
 ## Table of Contents
 
 [Scenario](#scenario)\
 [Business Process Flow](#business-process-flow)\
 [Solution Architecture](#solution-architecture)\
-[Implementation: Configuration and Development](#configuration-and-development)\
 [Additional Resources](#additional-resources)\
 [Known Issues](#known-issues)\
 [Reference](#reference)\
@@ -118,8 +106,6 @@ These are the technical prerequistics for an integration between Microsoft Azure
     >- To establishe a private connection between selected SAP BTP services and selected services in your own IaaS provider accounts.
 - SAP Business Application Studio
     >- A powerful and modern development environment, tailored for efficient development of business applications for the Intelligent Enterprise.
-- SAP Event Mesh Connectivity Plan(Beta)
-    >- As of now, this service supports SAP Event Mesh to Azure Event Grid direct connectivity. This is available as Beta for Enterprise accounts only for now.
 
 **Microsoft Azure**
 
@@ -140,42 +126,6 @@ These are the technical prerequistics for an integration between Microsoft Azure
 - An Azure Communication Service
     >- Required to send email notificiations and SMS to users.
 
-
-## Configuration and Development
-
-This repository is documented for 2 scenarios:
-
-1. Inbound to SAP S/4HANA from Azure IoT Central.
-2. Outbound from SAP S/4HANA to Azure Event Grid.
-
-These are the steps to configure SAP S/4HANA, SAP BTP and Microsoft Azure for **Scenario 1 - Inbound to SAP S/4HANA from Azure IoT Central**.
-
-[Step 1: Set Up the Subaccount in SAP BTP](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step1-Setup-SAPBTP-Subaccount/README.md)
-
-[Step 2: Configure Microsoft Azure IoT](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step2-Setup-AzureIoT/README.md)
-
-[Step 3: Check SAP S/4HANA Readiness](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step3-SAPS4HANA-Readiness/README.md)
-
-Step 4: Connect SAP BTP and SAP S/4HANA
-
-   - [(Option 1) Using SAP BTP Connectivity Service](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step4a-SetupCloudConnector/README.md)
-
-   - [(Option 2) Using SAP Private Link Service](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step4b-Setup-SAPPrivateLinkService/README.md)
-
-[Step 5a: Build and Deploy the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5a-Build-Deploy-ExtensionApplication/README.md)
-
-[Step 5b: SAP Integration Suite, Advanced Event Mesh Configuration](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5b-Advanced-Event-Mesh-Configuration/README.md)
-
-[Step 6: Create SAP Build Process Automation - Decisions Project](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step6-Configure-BusinessRules-Part1/README.md)
-
-[Step 7: Configure SAP S/4HANA Business Actions in the extension application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step7-Configure-BusinessActions/README.md)
-
-[Step 8: Update and Deploy SAP Build Process Automation Decisions Project](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step8-Configure-BusinessRules-Part2/README.md)
-
-[Step 9: Test the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step9-Test-ExtensionApplication/README.md)
-
-For **Scenario 2 - Outbound from SAP S/4HANA to Azure Event Grid**, please refer to 
-[Receiving events from SAP S/4HANA in Microsoft Azure Event Grid using SAP Integration Suite, Advanced Event Mesh](./Documentation/Scenario2-Outbound-from-SAPS4HANA/README.md) link.
 
 ## Additional Resources
 
