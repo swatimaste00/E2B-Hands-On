@@ -1,6 +1,16 @@
-# Build Events-to-Business Actions Scenarios with SAP BTP and Microsoft Azure - testing
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-events-to-business-actions-framework)](https://api.reuse.software/info/github.com/SAP-samples/btp-events-to-business-actions-framework)
+
+# IN263 - Support Industry 4.0 with Event-Driven Architecture   
+
+## Description    
+
+This repository contains the material for the SAP TechEd 2023 session called IN263 - Support Industry 4.0 with Event-Driven Architecture.
+
+## Overview  
+
+This session introduces attendees to a event-driven Industry 4.0 business scenario where they will implement Events-to-Business-Actions framework built on SAP BTP to inetgrate real time events generated from Microsoft Azure IOT Central into SAP Business Processes. This implement Events-to-Business-Actions framework can be used in combination with any hyperscaler or telco IOT.
+
 
 This repository contains code samples and instructions for developing an extension application in SAP BTP. The sample application has been developed in a partner collaboration to help customers integrate any type of events from systems into SAP ecosystem via SAP BTP. This application helps to configure  actions that needs to be taken in SAP LoB systems based on the events that is received in SAP Integration Suite, Advanced Event Mesh. The application scenario you will develop in this tutorial leverages Event-To-Business actions framework (extension application). 
 
