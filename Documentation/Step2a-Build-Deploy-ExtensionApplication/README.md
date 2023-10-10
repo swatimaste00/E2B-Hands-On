@@ -19,6 +19,10 @@ Build and deploy the application. Run the following commands:
 
 1. Open the Cloud Foundry command line interface (cf CLI).
 
+    ```
+    git checkout advanced-event-mesh
+    ```
+
 2. Navigate to **action-management** directory.
 
     ```
