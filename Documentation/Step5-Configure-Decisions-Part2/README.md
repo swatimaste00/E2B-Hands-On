@@ -37,11 +37,11 @@ In this section, you will update decision table and activate business rule proje
 
     Follow the steps shown in the following screenshots.
 
-    [plot](./images/Deploy2.png)
+    ![plot](./images/Deploy2.png)
 
-    [plot](./images/Deploy3.png)
+    ![plot](./images/Deploy3.png)
 
-    [plot](./images/Deploy4.png)
+    ![plot](./images/Deploy4.png)
 
 7. The Project is successfully Redeployed ! 
 
