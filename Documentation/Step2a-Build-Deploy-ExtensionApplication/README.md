@@ -9,7 +9,7 @@ Access the [Event To Action Framework](https://github.com/SAP-samples/btp-events
 
 ### 2. Check the Prerequisites for Deployment
 
-Ensure you have added the required entitlements as described in section **Step1-Setup-SAPBTP-Subaccount** page before deployment.
+Ensure you have added the required entitlements as described in section **Step1-Set-Up** page before deployment.
 
 ### 3. Deploy the Extension Application
 
