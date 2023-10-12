@@ -23,7 +23,7 @@ In this event-driven scenario, based on the real-time status of the IoT Devices 
 
 3. SAP Integration Suite, Advanced Event Mesh receives the events and triggers webhook to send the events to extension application of Events-to-Business-Actions framework running on SAP BTP.
 
-4. Extension application of Event-To-Business=Actions framework is configured with all necessary actions to be taken.
+4. Extension application of Events-To-Business-Actions framework is configured with all necessary actions to be taken.
    -   [Default Action] Calling SAP Build Process Automation - Decisions capability API to determine which business action to be taken
    -   [Main Action] execute the business action OData API call to trigger business process in ERP systems
    -   [Pre Action] call api to get master data required for business action api (Main Action)
@@ -38,7 +38,7 @@ In today's hand-on session, Based on the fill level of waste container/silo a ne
    -   Events-to-Business-Actions-Framework will first identify that a Purchase Requisition needs to be created in SAP S/4 HANA using Decisions from SAP Build Process Automation and then creates a Purchase Requisition. Once purchase requisitionn is created, it also update the Waste Container device status on Azure IoT Central.
 
 
-**To Be Updated]**
+**To Be Updated**
 
 ## Table of Contents
 
