@@ -17,19 +17,28 @@ In this event-driven scenario, based on the real-time status of the IoT Devices 
 
 ![plot](./images/businessprocess.png)
 
-1. Data from IoT Devices are sent to Microsoft Azure IoT Central.   
-   In this session, a waste container/silo is used which sends fill level information to IOT central.
+1. Data from industrial IoT Devices are sent to Microsoft Azure IoT Central.   
 
-2. Rules in Microsoft Azure IoT triggers an call to SAP Integration Suite, Advanced Event Mesh in case of any events which needs attention. This is defined in IoT Rules for devices.
+2. Rules in Microsoft Azure IoT identifies any event which needs attention and forwards it to SAP Integration Suite Advanced Event Mesh.
 
-3. SAP Integration Suite, Advanced Event Mesh receives the events.
+3. SAP Integration Suite, Advanced Event Mesh receives the events and triggers webhook to send the events to extension application of Events-to-Business-Actions framework running on SAP BTP.
 
-4. Extension application of Event-To-Business=Actions framework is configured with all necessary actions (For example, calling SAP Build Process Automation - Decisions capability API to read the decision tables to decide on action to be taken, configure the OData API call to be executed , service call back to the device) to be taken.
+4. Extension application of Event-To-Business=Actions framework is configured with all necessary actions to be taken.
+   -   [Default Action] Calling SAP Build Process Automation - Decisions capability API to determine which business action to be taken
+   -   [Main Action] execute the business action OData API call to trigger business process in ERP systems
+   -   [Pre Action] call api to get master data required for business action api (Main Action)
+   -   [Post Action] After business action is executed, call Azure IOT device api to update it's status.
 
-5. Extension application executes the business actions.
+6. Extension application executes the business actions.
 
-6. For this sample application, based on the fill level of waste container/silo a new Purchase Order Requisition is created in SAP S/4HANA.
+7. In today's hand-on session, Based on the fill level of waste container/silo a new Purchase Order Requisition is created in SAP S/4HANA.
+   -   Simulate a Waste Container device in IOT Azure central which constantly generates events.
+   -   Set up a rule which identifies when waste container is close to filled and forwards the event to Advanced Event Mesh uisng detinations in Azure IOT Central.
+   -   Advanced Event Mesh triggers the webhook to forward the event to Events-to-Business-Actions framework.
+   -   Events-to-Business-Actions-Framework will first identify that a Purchase Requisition needs to be created in SAP S/4 HANA using Decisions from SAP Build Process Automation and then creates a Purchase Requisition. Once purchase requisitionn is created, it also update the Waste Container device status on Azure IOT Central.
 
+
+**To Be Updated]**
 
 ## Table of Contents
 
