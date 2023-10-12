@@ -21,7 +21,7 @@ In this event-driven scenario, based on the real-time status of the IoT Devices 
 -   Rules in Microsoft Azure IoT identifies any event which needs attention and forwards it to SAP Integration Suite Advanced Event Mesh.
 -   SAP Integration Suite, Advanced Event Mesh receives the events and triggers webhook to send the events to extension application of Events-to-Business-Actions framework running on SAP BTP.
 -   Extension application of Events-To-Business-Actions framework is configured with all necessary actions to be taken.
-   -    (Default Action) Calling SAP Build Process Automation - Decision capability API to determine which business action to be taken
+   --   (Default Action) Calling SAP Build Process Automation - Decision capability API to determine which business action to be taken
    -    (Main Action) execute the business action OData API call to trigger business process in ERP systems
    -    (Pre Action) call api to get master data required for business action api (Main Action)
    -    (Post Action) After business action is executed, call Azure IoT device api to update it's status.
