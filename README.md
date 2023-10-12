@@ -17,19 +17,15 @@ In this event-driven scenario, based on the real-time status of the IoT Devices 
 
 ![plot](./images/businessprocess.png)
 
-1. Data from industrial IoT Devices are sent to Microsoft Azure IoT Central.   
-
-2. Rules in Microsoft Azure IoT identifies any event which needs attention and forwards it to SAP Integration Suite Advanced Event Mesh.
-
-3. SAP Integration Suite, Advanced Event Mesh receives the events and triggers webhook to send the events to extension application of Events-to-Business-Actions framework running on SAP BTP.
-
-4. Extension application of Events-To-Business-Actions framework is configured with all necessary actions to be taken.
+-   Data from industrial IoT Devices are sent to Microsoft Azure IoT Central.   
+-   Rules in Microsoft Azure IoT identifies any event which needs attention and forwards it to SAP Integration Suite Advanced Event Mesh.
+-   SAP Integration Suite, Advanced Event Mesh receives the events and triggers webhook to send the events to extension application of Events-to-Business-Actions framework running on SAP BTP.
+-   Extension application of Events-To-Business-Actions framework is configured with all necessary actions to be taken.
    -   [Default Action] Calling SAP Build Process Automation - Decision capability API to determine which business action to be taken
    -   [Main Action] execute the business action OData API call to trigger business process in ERP systems
    -   [Pre Action] call api to get master data required for business action api (Main Action)
-   -   [Post Action] After business action is executed, call Azure IOT device api to update it's status.
-
-6. Extension application executes the business actions.
+   -   [Post Action] After business action is executed, call Azure IoT device api to update it's status.
+   Extension application executes the business actions and any pre or post actions.
 
 In today's hand-on session, Based on the fill level of waste container/silo a new Purchase Order Requisition is created in SAP S/4HANA.
    -   Simulate a Waste Container device in IOT Azure central which constantly generates events.
