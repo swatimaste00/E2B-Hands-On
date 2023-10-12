@@ -1,16 +1,47 @@
-# Build Events-to-Business Actions Scenarios with SAP BTP and Microsoft Azure - testing
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-events-to-business-actions-framework)](https://api.reuse.software/info/github.com/SAP-samples/btp-events-to-business-actions-framework)
 
-This repository contains code samples and instructions for developing an extension application in SAP BTP. The sample application has been developed in a partner collaboration to help customers integrate any type of events from systems into SAP ecosystem via SAP BTP. This application helps to configure  actions that needs to be taken in SAP LoB systems based on the events that is received in SAP Integration Suite, Advanced Event Mesh. The application scenario you will develop in this tutorial leverages Event-To-Business actions framework (extension application). 
+# IN263 - Support Industry 4.0 with Event-Driven Architecture   
 
-This framework can be used in combination with any hyperscalar/telco IoT.
+## Description    
+
+This repository contains the material for the SAP TechEd 2023 session called IN263 - Support Industry 4.0 with Event-Driven Architecture.
+
+## Overview  
+
+This session introduces attendees to a event-driven Industry 4.0 business scenario where they will implement Events-to-Business-Actions framework built on SAP BTP to integrate real time events generated from Microsoft Azure IoT Central into SAP Business Processes to enrich the outcome of enterprise operations and facilitate rapid decision making. This Events-to-Business-Actions framework can be used in combination with any hyperscaler or telco IoT.
+
+## Business Process Flow
+
+In this event-driven scenario, based on the real-time status of the IoT Devices , actionable events are sent to SAP BTP to decide on the critical business actions to be taken in the SAP Enteprise Business systems based on business rules defined in the system.
+
+![plot](./images/businessprocess.png)
+
+a.  Data from industrial IoT Devices are sent to Microsoft Azure IoT Central.   
+b.  Rules in Microsoft Azure IoT identifies any event which needs attention and forwards it to SAP Integration Suite Advanced Event Mesh.
+c.  SAP Integration Suite, Advanced Event Mesh receives the events and triggers webhook to send the events to extension application of Events-to-Business-Actions framework running on SAP BTP.
+d.  Extension application of Events-To-Business-Actions framework is configured with all necessary actions to be taken.    
+    -  (Default Action) Calling SAP Build Process Automation - Decision capability API to determine which business action to be taken   
+    -  (Main Action) execute the business action OData API call to trigger business process in ERP systems   
+    -  (Pre Action) call api to get master data required for business action api (Main Action)   
+    -  (Post Action) After business action is executed, call Azure IoT device api to update it's status.   
+   Extension application executes the business actions and any pre or post actions.
+
+In today's hand-on session, Based on the fill level of waste container/silo a new Purchase Order Requisition is created in SAP S/4HANA.
+   -   Simulate a Waste Container device in Azure IoT Central which constantly generates events.
+   -   Set up a rule which identifies when waste container is close to filled and forwards the event to SAP IAdvanced Event Mesh uisng detinations in Azure I0T Central.
+   -   Advanced Event Mesh triggers the webhook to forward the event to Events-to-Business-Actions framework.
+   -   Events-to-Business-Actions-Framework will first identify that a Purchase Requisition needs to be created in SAP S/4 HANA using Decision from SAP Build Process Automation and then creates a Purchase Requisition in SAP S/4 HANA system. Once purchase requisitionn is created, it also update the Waste Container device status on Azure IoT Central.
+
+
+**To Be Updated**
 
 ## Table of Contents
 
 [Scenario](#scenario)\
 [Business Process Flow](#business-process-flow)\
 [Solution Architecture](#solution-architecture)\
+[Implementation: Configuration and Development](#configuration-and-development)\
 [Additional Resources](#additional-resources)\
 [Known Issues](#known-issues)\
 [Reference](#reference)\
@@ -20,29 +51,6 @@ This framework can be used in combination with any hyperscalar/telco IoT.
 [Contributing](#contributing)\
 [License](#license)
 
-## Scenario
-
-The business scenario you will be implementing how to integrate real time events generated from Microsoft Azure IoT Platform into SAP business processes to enrich the outcome of enterprise operations and facilitate rapid decision making. The framework can be extended to any platform and to any kind of event.
-
-You can choose to configure and integrate events with any SAP LoB solution.
-
-## Business Process Flow
-
-In this event-driven scenario, based on the real-time status of the IoT Devices , actionable events are sent to SAP BTP to decide on the critical business actions to be taken in the SAP Enteprise Business systems based on business rules defined in the system.
-
-![plot](./images/businessprocess.png)
-
-1. Data from IoT Devices are sent to Microsoft Azure IoT Central.
-
-2. Rules in Microsoft Azure IoT triggers an call to SAP Integration Suite, Advanced Event Mesh in case of any actions which needs attention. This is defined in IoT Rules for devices.
-
-3. SAP Integration Suite, Advanced Event Mesh receives the events.
-
-4. Extension application is configured with all necessary actions (For example, calling SAP Build Process Automation - Decisions capability API to read the decision tables to decide on action to be taken, configure the OData API call to be executed , service call back to the device) to be taken.
-
-5. Extension application executes the business actions.
-
-6. For this sample application, based on the fill level of waste container/silo a new Purchase Order Requisition is created in SAP S/4HANA.
 
 ## Solution Architecture
 
@@ -106,6 +114,8 @@ These are the technical prerequistics for an integration between Microsoft Azure
     >- To establishe a private connection between selected SAP BTP services and selected services in your own IaaS provider accounts.
 - SAP Business Application Studio
     >- A powerful and modern development environment, tailored for efficient development of business applications for the Intelligent Enterprise.
+- SAP Event Mesh Connectivity Plan(Beta)
+    >- As of now, this service supports SAP Event Mesh to Azure Event Grid direct connectivity. This is available as Beta for Enterprise accounts only for now.
 
 **Microsoft Azure**
 
@@ -126,6 +136,42 @@ These are the technical prerequistics for an integration between Microsoft Azure
 - An Azure Communication Service
     >- Required to send email notificiations and SMS to users.
 
+
+## Configuration and Development
+
+This repository is documented for 2 scenarios:
+
+1. Inbound to SAP S/4HANA from Azure IoT Central.
+2. Outbound from SAP S/4HANA to Azure Event Grid.
+
+These are the steps to configure SAP S/4HANA, SAP BTP and Microsoft Azure for **Scenario 1 - Inbound to SAP S/4HANA from Azure IoT Central**.
+
+[Step 1: Set Up the Subaccount in SAP BTP](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step1-Setup-SAPBTP-Subaccount/README.md)
+
+[Step 2: Configure Microsoft Azure IoT](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step2-Setup-AzureIoT/README.md)
+
+[Step 3: Check SAP S/4HANA Readiness](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step3-SAPS4HANA-Readiness/README.md)
+
+Step 4: Connect SAP BTP and SAP S/4HANA
+
+   - [(Option 1) Using SAP BTP Connectivity Service](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step4a-SetupCloudConnector/README.md)
+
+   - [(Option 2) Using SAP Private Link Service](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step4b-Setup-SAPPrivateLinkService/README.md)
+
+[Step 5a: Build and Deploy the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5a-Build-Deploy-ExtensionApplication/README.md)
+
+[Step 5b: SAP Integration Suite, Advanced Event Mesh Configuration](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step5b-Advanced-Event-Mesh-Configuration/README.md)
+
+[Step 6: Create SAP Build Process Automation - Decisions Project](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step6-Configure-BusinessRules-Part1/README.md)
+
+[Step 7: Configure SAP S/4HANA Business Actions in the extension application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step7-Configure-BusinessActions/README.md)
+
+[Step 8: Update and Deploy SAP Build Process Automation Decisions Project](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step8-Configure-BusinessRules-Part2/README.md)
+
+[Step 9: Test the Extension Application](./Documentation/Scenario1-Inbound-to-SAPS4HANA/Step9-Test-ExtensionApplication/README.md)
+
+For **Scenario 2 - Outbound from SAP S/4HANA to Azure Event Grid**, please refer to 
+[Receiving events from SAP S/4HANA in Microsoft Azure Event Grid using SAP Integration Suite, Advanced Event Mesh](./Documentation/Scenario2-Outbound-from-SAPS4HANA/README.md) link.
 
 ## Additional Resources
 
