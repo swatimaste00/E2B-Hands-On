@@ -9,7 +9,7 @@ This repository contains the material for the SAP TechEd 2023 session called IN2
 
 ## Overview  
 
-This session introduces attendees to a event-driven Industry 4.0 business scenario where they will implement Events-to-Business-Actions framework built on SAP BTP to inetgrate real time events generated from Microsoft Azure IOT Central into SAP Business Processes to enrich the outcome of enterprise operations and facilitate rapid decision making. This Events-to-Business-Actions framework can be used in combination with any hyperscaler or telco IOT.
+This session introduces attendees to a event-driven Industry 4.0 business scenario where they will implement Events-to-Business-Actions framework built on SAP BTP to integrate real time events generated from Microsoft Azure IoT Central into SAP Business Processes to enrich the outcome of enterprise operations and facilitate rapid decision making. This Events-to-Business-Actions framework can be used in combination with any hyperscaler or telco IoT.
 
 ## Business Process Flow
 
@@ -31,11 +31,11 @@ In this event-driven scenario, based on the real-time status of the IoT Devices 
 
 6. Extension application executes the business actions.
 
-7. In today's hand-on session, Based on the fill level of waste container/silo a new Purchase Order Requisition is created in SAP S/4HANA.
+In today's hand-on session, Based on the fill level of waste container/silo a new Purchase Order Requisition is created in SAP S/4HANA.
    -   Simulate a Waste Container device in IOT Azure central which constantly generates events.
    -   Set up a rule which identifies when waste container is close to filled and forwards the event to Advanced Event Mesh uisng detinations in Azure IOT Central.
    -   Advanced Event Mesh triggers the webhook to forward the event to Events-to-Business-Actions framework.
-   -   Events-to-Business-Actions-Framework will first identify that a Purchase Requisition needs to be created in SAP S/4 HANA using Decisions from SAP Build Process Automation and then creates a Purchase Requisition. Once purchase requisitionn is created, it also update the Waste Container device status on Azure IOT Central.
+   -   Events-to-Business-Actions-Framework will first identify that a Purchase Requisition needs to be created in SAP S/4 HANA using Decisions from SAP Build Process Automation and then creates a Purchase Requisition. Once purchase requisitionn is created, it also update the Waste Container device status on Azure IoT Central.
 
 
 **To Be Updated]**
