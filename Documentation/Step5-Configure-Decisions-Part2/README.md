@@ -45,6 +45,6 @@ In this section, you will update decision table and activate business rule proje
 
 7. The Project is successfully Redeployed ! 
 
-    [plot](./images/Deployed.png)
+    ![plot](./images/Deployed.png)
 
 
