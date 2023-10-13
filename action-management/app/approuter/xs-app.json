@@ -31,12 +31,6 @@
       "target": "/sappaaactionmgmtuilogs/$1",
       "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa"
-    },
-    {
-      "source": "^/comsapbpmrule.ruleeditor/(.*)$",
-      "target": "/comsapbpmrule.ruleeditor/$1",
-      "service": "com.sap.bpm.rule",
-      "endpoint": "rule_runtime_url"
     },   
     {
       "source": "^/(.*)$",
