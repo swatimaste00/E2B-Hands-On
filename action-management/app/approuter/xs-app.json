@@ -33,12 +33,6 @@
       "authenticationType": "xsuaa"
     },
     {
-      "source": "^/comsapbpmrule.ruleeditor/(.*)$",
-      "target": "/comsapbpmrule.ruleeditor/$1",
-      "service": "com.sap.bpm.rule",
-      "endpoint": "rule_runtime_url"
-    },   
-    {
       "source": "^/(.*)$",
       "target": "$1",
       "destination": "srv-api",
