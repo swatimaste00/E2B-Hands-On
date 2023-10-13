@@ -17,9 +17,13 @@ In this section, you will configure SAP Business Rule project which will be used
 
     ![plot](./images/process.png)
 
-4. Fill the project name as **Events-to-Business-Actions-Framework** and Choose **Create**
+4. Fill the project name as **Events-to-Business-Actions-Framework-xxx** and Choose **Create**
 
     ![plot](./images/createproject.png)
+
+    **Accept** the disclaimer if prompted!
+
+    ![plot](./images/AcceptDisclaimer.png)    
 
 5. The Project is now created , click on **Cancel** for the **Create Process** pop-up , as we will be creating **Decisions** and it's related **Data Types** in the following steps.
 
@@ -34,6 +38,8 @@ In this section, you will configure SAP Business Rule project which will be used
     ![plot](./images/DecisionName.png)
 
     You will see the following screeen as the decision is created successfully.
+
+    ![plot](./images/DecisionCreated.png)   
 
 ### 2. Configure SAP Build Process Automation Decisions
 
